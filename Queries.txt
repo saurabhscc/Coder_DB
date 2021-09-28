@@ -677,3 +677,67 @@ mysql> select * from student
 |       7 | Snehal  | Sindhudurg | 7777777777 |       7 | Vindhya   | Nashik     |
 +---------+---------+------------+------------+---------+-----------+------------+
 7 rows in set (0.00 sec)
+
+
+mysql> select * from student1;
++---------+-----------+------------+
+| roll_no | name      | address    |
++---------+-----------+------------+
+|       1 | Sharad    | Latur      |
+|       2 | Tushar    | Shivneri   |
+|       3 | Mayur     | Aurangabad |
+|       4 | Shweta    | Baramati   |
+|       5 | Shubhangi | Nagpur     |
+|       6 | Vishal    | Nandurbar  |
+|       7 | Vindhya   | Nashik     |
++---------+-----------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student;
++---------+---------+------------+------------+
+| roll_no | name    | address    | mob_no     |
++---------+---------+------------+------------+
+|       1 | Sky     | Solapur    | 1111111111 |
+|       2 | Sanket  | Satara     | 2222222222 |
+|       3 | Shreyas | Sangli     | 3333333333 |
+|       4 | Shivani | Kolhapur   | 4444444444 |
+|       5 | Raj     | Ahmednagar | 5555555555 |
+|       6 | Tanvi   | Mumbai     | 6666666666 |
+|       7 | Snehal  | Sindhudurg | 7777777777 |
++---------+---------+------------+------------+
+7 rows in set (0.00 sec)
+
+/*LEFT JOIN keyword returns all records from the left table (student), and the matching records (if any) from the right table (student1)*/
+mysql> select * from student
+    -> left join student1
+    -> on student.name = student1.name;
++---------+---------+------------+------------+---------+------+---------+
+| roll_no | name    | address    | mob_no     | roll_no | name | address |
++---------+---------+------------+------------+---------+------+---------+
+|       1 | Sky     | Solapur    | 1111111111 |    NULL | NULL | NULL    |
+|       2 | Sanket  | Satara     | 2222222222 |    NULL | NULL | NULL    |
+|       3 | Shreyas | Sangli     | 3333333333 |    NULL | NULL | NULL    |
+|       4 | Shivani | Kolhapur   | 4444444444 |    NULL | NULL | NULL    |
+|       5 | Raj     | Ahmednagar | 5555555555 |    NULL | NULL | NULL    |
+|       6 | Tanvi   | Mumbai     | 6666666666 |    NULL | NULL | NULL    |
+|       7 | Snehal  | Sindhudurg | 7777777777 |    NULL | NULL | NULL    |
++---------+---------+------------+------------+---------+------+---------+
+7 rows in set (0.00 sec)
+
+/*RIGHT JOIN keyword returns all records from the right table (student1), and the matching records (if any) from the left table (student).*/
+mysql> select * from student
+    -> right join student1
+    -> on student.name = student1.name;
++---------+------+---------+--------+---------+-----------+------------+
+| roll_no | name | address | mob_no | roll_no | name      | address    |
++---------+------+---------+--------+---------+-----------+------------+
+|    NULL | NULL | NULL    |   NULL |       1 | Sharad    | Latur      |
+|    NULL | NULL | NULL    |   NULL |       2 | Tushar    | Shivneri   |
+|    NULL | NULL | NULL    |   NULL |       3 | Mayur     | Aurangabad |
+|    NULL | NULL | NULL    |   NULL |       4 | Shweta    | Baramati   |
+|    NULL | NULL | NULL    |   NULL |       5 | Shubhangi | Nagpur     |
+|    NULL | NULL | NULL    |   NULL |       6 | Vishal    | Nandurbar  |
+|    NULL | NULL | NULL    |   NULL |       7 | Vindhya   | Nashik     |
++---------+------+---------+--------+---------+-----------+------------+
+7 rows in set (0.00 sec)
+
