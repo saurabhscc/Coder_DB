@@ -498,3 +498,182 @@ mysql> select country, MAX(creditlimit) as 'total credit limit'
 | Norway    |           96800.00 |
 +-----------+--------------------+
 10 rows in set (0.02 sec)
+
+
+mysql> select * student;                                            
++---------+---------+---------+------------+
+| roll_no | name    | address | mob_no     |
++---------+---------+---------+------------+
+|       1 | Sky     | Solapur | 1111111111 |
+|       2 | Sanket  | Satara  | 2222222222 |
+|       3 | Shreyas | Sangli  | 3333333333 |
++---------+---------+---------+------------+
+3 rows in set (0.01 sec)
+
+mysql> insert into student values(4, "Shivani", "Kolhapur");
+ERROR 1136 (21S01): Column count doesn't match value count at row 1
+mysql>  insert into student values(4, "Shivani", "Kolhapur","4444444444");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(5, "Raj", "Ahmednagar","5555555555");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(6, "Tanvi", "Mumbai","6666666666");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into student values(7, "Snehal", "Sindhudurg","7777777777");
+Query OK, 1 row affected (0.02 sec)
+
+
+
+mysql> show tables;
++------------------+
+| Tables_in_coders |
++------------------+
+| customers        |
+| student          |
+| student_1        |
++------------------+
+3 rows in set (0.03 sec)
+
+mysql> select * from student;
++---------+---------+------------+------------+
+| roll_no | name    | address    | mob_no     |
++---------+---------+------------+------------+
+|       1 | Sky     | Solapur    | 1111111111 |
+|       2 | Sanket  | Satara     | 2222222222 |
+|       3 | Shreyas | Sangli     | 3333333333 |
+|       4 | Shivani | Kolhapur   | 4444444444 |
+|       5 | Raj     | Ahmednagar | 5555555555 |
+|       6 | Tanvi   | Mumbai     | 6666666666 |
+|       7 | Snehal  | Sindhudurg | 7777777777 |
++---------+---------+------------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student_1;
++------------+
+| address    |
++------------+
+| Solapur    |
+| Satara     |
+| Sangli     |
+| Kolhapur   |
+| Ahmednagar |
+| Mumbai     |
+| Sindhudurg |
++------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student_1;
++------------+
+| address    |
++------------+
+| Solapur    |
+| Satara     |
+| Sangli     |
+| Kolhapur   |
+| Ahmednagar |
+| Mumbai     |
+| Sindhudurg |
++------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student;
++---------+---------+------------+------------+
+| roll_no | name    | address    | mob_no     |
++---------+---------+------------+------------+
+|       1 | Sky     | Solapur    | 1111111111 |
+|       2 | Sanket  | Satara     | 2222222222 |
+|       3 | Shreyas | Sangli     | 3333333333 |
+|       4 | Shivani | Kolhapur   | 4444444444 |
+|       5 | Raj     | Ahmednagar | 5555555555 |
+|       6 | Tanvi   | Mumbai     | 6666666666 |
+|       7 | Snehal  | Sindhudurg | 7777777777 |
++---------+---------+------------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student_1;
++------------+
+| address    |
++------------+
+| Solapur    |
+| Satara     |
+| Sangli     |
+| Kolhapur   |
+| Ahmednagar |
+| Mumbai     |
+| Sindhudurg |
++------------+
+7 rows in set (0.00 sec)
+
+mysql> create table student1(roll_no int, name varchar(20), address varchar(20));
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> insert into student1 values(1, "Sharad", "Latur");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into student1 values(2, "Tushar", "Shivneri");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student1 values(3, "Mayur", "Aurangabad");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student1 values(4, "Shweta", "Baramati");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into student1 values(5, "Shubhangi", "Nagpur");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student1 values(6, "Vishal", "Nandurbar");
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into student1 values(7, "Vindhya", "Nashik");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student1;
++---------+-----------+------------+
+| roll_no | name      | address    |
++---------+-----------+------------+
+|       1 | Sharad    | Latur      |
+|       2 | Tushar    | Shivneri   |
+|       3 | Mayur     | Aurangabad |
+|       4 | Shweta    | Baramati   |
+|       5 | Shubhangi | Nagpur     |
+|       6 | Vishal    | Nandurbar  |
+|       7 | Vindhya   | Nashik     |
++---------+-----------+------------+
+7 rows in set (0.00 sec)
+
+mysql> select * from student;
++---------+---------+------------+------------+
+| roll_no | name    | address    | mob_no     |
++---------+---------+------------+------------+
+|       1 | Sky     | Solapur    | 1111111111 |
+|       2 | Sanket  | Satara     | 2222222222 |
+|       3 | Shreyas | Sangli     | 3333333333 |
+|       4 | Shivani | Kolhapur   | 4444444444 |
+|       5 | Raj     | Ahmednagar | 5555555555 |
+|       6 | Tanvi   | Mumbai     | 6666666666 |
+|       7 | Snehal  | Sindhudurg | 7777777777 |
++---------+---------+------------+------------+
+7 rows in set (0.03 sec)
+
+
+/*JOIN clause is used to combine rows from two or more tables, based on a related column between them.*/
+
+/*INNER JOIN keyword selects records that have matching values in both tables*/
+mysql> select * from student
+    -> inner join student1
+    -> on student.roll_no = student1.roll_no;
++---------+---------+------------+------------+---------+-----------+------------+
+| roll_no | name    | address    | mob_no     | roll_no | name      | address    |
++---------+---------+------------+------------+---------+-----------+------------+
+|       1 | Sky     | Solapur    | 1111111111 |       1 | Sharad    | Latur      |
+|       2 | Sanket  | Satara     | 2222222222 |       2 | Tushar    | Shivneri   |
+|       3 | Shreyas | Sangli     | 3333333333 |       3 | Mayur     | Aurangabad |
+|       4 | Shivani | Kolhapur   | 4444444444 |       4 | Shweta    | Baramati   |
+|       5 | Raj     | Ahmednagar | 5555555555 |       5 | Shubhangi | Nagpur     |
+|       6 | Tanvi   | Mumbai     | 6666666666 |       6 | Vishal    | Nandurbar  |
+|       7 | Snehal  | Sindhudurg | 7777777777 |       7 | Vindhya   | Nashik     |
++---------+---------+------------+------------+---------+-----------+------------+
+7 rows in set (0.00 sec)
