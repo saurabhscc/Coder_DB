@@ -413,3 +413,88 @@ mysql> select country, count(*)
 | Portugal  |        1 |
 +-----------+----------+
 12 rows in set (0.02 sec)
+
+
+/*using aggregate functions sum,max,avg*/
+mysql> select country, SUM(creditlimit) as 'total credit limit'
+    -> from customers
+    -> group by country;
++-----------+--------------------+
+| country   | total credit limit |
++-----------+--------------------+
+| France    |          346000.00 |
+| USA       |          785500.00 |
+| Australia |          117300.00 |
+| Norway    |           81700.00 |
+| Poland    |               0.00 |
+| Germany   |           59700.00 |
+| Spain     |          227600.00 |
+| Sweden    |           53100.00 |
+| Denmark   |           83400.00 |
+| Singapore |          201700.00 |
+| Norway    |           96800.00 |
+| Portugal  |               0.00 |
++-----------+--------------------+
+12 rows in set (0.03 sec)
+
+mysql> select country, AVG(creditlimit) as 'total credit limit'
+    -> from customers
+    -> group by country;
++-----------+--------------------+
+| country   | total credit limit |
++-----------+--------------------+
+| France    |       86500.000000 |
+| USA       |       98187.500000 |
+| Australia |      117300.000000 |
+| Norway    |       81700.000000 |
+| Poland    |           0.000000 |
+| Germany   |       59700.000000 |
+| Spain     |      227600.000000 |
+| Sweden    |       53100.000000 |
+| Denmark   |       83400.000000 |
+| Singapore |      100850.000000 |
+| Norway    |       96800.000000 |
+| Portugal  |           0.000000 |
++-----------+--------------------+
+12 rows in set (0.01 sec)
+
+mysql> select country, MAX(creditlimit) as 'total credit limit'
+    -> from customers
+    -> group by country;
++-----------+--------------------+
+| country   | total credit limit |
++-----------+--------------------+
+| France    |          123900.00 |
+| USA       |          210500.00 |
+| Australia |          117300.00 |
+| Norway    |           81700.00 |
+| Poland    |               0.00 |
+| Germany   |           59700.00 |
+| Spain     |          227600.00 |
+| Sweden    |           53100.00 |
+| Denmark   |           83400.00 |
+| Singapore |          103800.00 |
+| Norway    |           96800.00 |
+| Portugal  |               0.00 |
++-----------+--------------------+
+12 rows in set (0.00 sec)
+
+mysql> select country, MAX(creditlimit) as 'total credit limit'
+    -> from customers
+    -> group by country
+    -> having MAX(creditlimit) > 1200;
++-----------+--------------------+
+| country   | total credit limit |
++-----------+--------------------+
+| France    |          123900.00 |
+| USA       |          210500.00 |
+| Australia |          117300.00 |
+| Norway    |           81700.00 |
+| Germany   |           59700.00 |
+| Spain     |          227600.00 |
+| Sweden    |           53100.00 |
+| Denmark   |           83400.00 |
+| Singapore |          103800.00 |
+| Norway    |           96800.00 |
++-----------+--------------------+
+10 rows in set (0.02 sec)
