@@ -198,3 +198,19 @@ mysql> select * from student_1;
 | Sangli  | 3333333333 |
 +---------+------------+
 3 rows in set (0.01 sec)
+
+
+/*Drop the table*/
+mysql>  drop view student_1;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> create view student_1 as
+    -> select address, mob_no from student;
+Query OK, 0 rows affected (0.04 sec)
+
+/* alter command  modify an existing database, table, view or other database*/
+mysql> alter view student_1 as
+    -> select address
+    -> from student;
+Query OK, 0 rows affected (0.03 sec)
+
