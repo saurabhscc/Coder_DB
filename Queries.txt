@@ -105,3 +105,80 @@ mysql> select name, address from student where roll_no = 2;
 | Sanket | Satara  |
 +--------+---------+
 1 row in set (0.00 sec)
+
+
+
+/* add new column in table*/
+mysql>  alter table student add mob_no bigint;
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+
+mysql> select * from student;
++---------+---------+----------+--------+
+| roll_no | name    | address  | mob_no |
++---------+---------+----------+--------+
+|       1 | Sky     | Solapur  |   NULL |
+|       2 | Sanket  | Satara   |   NULL |
+|       3 | Shreyas | Sangli   |   NULL |
+|       4 | Shivani | Kolhapur |   NULL |
++---------+---------+----------+--------+
+4 rows in set (0.00 sec)
+
+/*update table*/
+mysql> update student set mob_no = 1111111111  where roll_no = 1;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student set mob_no = 2222222222  where roll_no = 2;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student set mob_no =3333333333  where roll_no = 3;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update student set mob_no = 7057  where roll_no = 4;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student;
++---------+---------+----------+------------+
+| roll_no | name    | address  | mob_no     |
++---------+---------+----------+------------+
+|       1 | Sky     | Solapur  | 1111111111 |
+|       2 | Sanket  | Satara   | 2222222222 |
+|       3 | Shreyas | Sangli   | 3333333333 |
+|       4 | Shivani | Kolhapur |       7057 |
++---------+---------+----------+------------+
+4 rows in set (0.00 sec)
+
+/*Use update to replace values in table*/
+mysql> update student set mob_no = "4444444444" where roll_no = 4;
+Query OK, 1 row affected (0.03 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student;
++---------+---------+----------+------------+
+| roll_no | name    | address  | mob_no     |
++---------+---------+----------+------------+
+|       1 | Sky     | Solapur  | 1111111111 |
+|       2 | Sanket  | Satara   | 2222222222 |
+|       3 | Shreyas | Sangli   | 3333333333 |
+|       4 | Shivani | Kolhapur | 4444444444 |
++---------+---------+----------+------------+
+4 rows in set (0.01 sec)
+
+/*delete values from table*/
+mysql> delete from student where roll_no = 4;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> select * from student;
++---------+---------+---------+------------+
+| roll_no | name    | address | mob_no     |
++---------+---------+---------+------------+
+|       1 | Sky     | Solapur | 1111111111 |
+|       2 | Sanket  | Satara  | 2222222222 |
+|       3 | Shreyas | Sangli  | 3333333333 |
++---------+---------+---------+------------+
+3 rows in set (0.00 sec)
