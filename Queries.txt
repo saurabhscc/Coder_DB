@@ -361,3 +361,55 @@ mysql> select * from customers where country = 'USA' order by customerNumber asc
 |            168 | American Souvenirs Inc       | Franco          | Keith            | 2035557845 | 149 Spinnaker Dr.         | Suite 101    | New Haven     | CT    | 97823      | USA     |                   1286 |        0.00 |
 +----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
 8 rows in set (0.00 sec)
+
+
+/*using clauses order by*/
+mysql> select city, creditlimit
+    -> from customers where creditlimit > 2000
+    -> order by city desc, creditlimit asc;
++---------------+-------------+
+| city          | creditlimit |
++---------------+-------------+
+| Stavern       |    81700.00 |
+| Singapore     |    97900.00 |
+| Singapore     |   103800.00 |
+| San Rafael    |   210500.00 |
+| San Francisco |    64600.00 |
+| NYC           |   114900.00 |
+| NYC           |   138500.00 |
+| Nantes        |    21000.00 |
+| Nantes        |   118200.00 |
+| Melbourne     |   117300.00 |
+| Madrid        |   227600.00 |
+| Lyon          |   123900.00 |
+| Luleå         |    53100.00 |
+| Lille         |    82900.00 |
+| Las Vegas     |    71800.00 |
+| Kobenhavn     |    83400.00 |
+| Frankfurt     |    59700.00 |
+| Burlingame    |    84600.00 |
+| Bergen        |    96800.00 |
+| Allentown     |   100600.00 |
++---------------+-------------+
+20 rows in set (0.02 sec)
+
+mysql> select country, count(*)
+    -> from customers
+    -> group by country;
++-----------+----------+
+| country   | count(*) |
++-----------+----------+
+| France    |        4 |
+| USA       |        8 |
+| Australia |        1 |
+| Norway    |        1 |
+| Poland    |        1 |
+| Germany   |        1 |
+| Spain     |        1 |
+| Sweden    |        1 |
+| Denmark   |        1 |
+| Singapore |        2 |
+| Norway    |        1 |
+| Portugal  |        1 |
++-----------+----------+
+12 rows in set (0.02 sec)
