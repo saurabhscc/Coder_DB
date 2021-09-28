@@ -327,3 +327,37 @@ mysql> select distinct country, city from customers;
 | France    | Lille         |
 +-----------+---------------+
 20 rows in set (0.03 sec)
+
+
+/*order by clause  sort the records in ascending or descending order.*/
+
+mysql> select * from customers where country = 'USA' order by customerNumber desc;
+
++----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
+| customerNumber | customerName                 | contactLastName | contactFirstName | phone      | addressLine1              | addressLine2 | city          | state | postalCode | country | salesRepEmployeeNumber | creditLimit |
++----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
+|            168 | American Souvenirs Inc       | Franco          | Keith            | 2035557845 | 149 Spinnaker Dr.         | Suite 101    | New Haven     | CT    | 97823      | USA     |                   1286 |        0.00 |
+|            161 | Technics Stores Inc.         | Hashimoto       | Juri             | 6505556809 | 9408 Furth Circle         | NULL         | Burlingame    | CA    | 94217      | USA     |                   1165 |    84600.00 |
+|            157 | Diecast Classics Inc.        | Leong           | Kelvin           | 2155551555 | 7586 Pompton St.          | NULL         | Allentown     | PA    | 70267      | USA     |                   1216 |   100600.00 |
+|            151 | Muscle Machine Inc           | Young           | Jeff             | 2125557413 | 4092 Furth Circle         | Suite 400    | NYC           | NY    | 10022      | USA     |                   1286 |   138500.00 |
+|            131 | Land of Toys Inc.            | Lee             | Kwai             | 2125557818 | 897 Long Airport Avenue   | NULL         | NYC           | NY    | 10022      | USA     |                   1323 |   114900.00 |
+|            129 | Mini Wheels Co.              | Murphy          | Julie            | 6505555787 | 5557 North Pendale Street | NULL         | San Francisco | CA    | 94217      | USA     |                   1165 |    64600.00 |
+|            124 | Mini Gifts Distributors Ltd. | Nelson          | Susan            | 4155551450 | 5677 Strong St.           | NULL         | San Rafael    | CA    | 97562      | USA     |                   1165 |   210500.00 |
+|            112 | Signal Gift Stores           | King            | Jean             | 7025551838 | 8489 Strong St.           | NULL         | Las Vegas     | NV    | 83030      | USA     |                   1166 |    71800.00 |
++----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
+8 rows in set (0.00 sec)
+
+mysql> select * from customers where country = 'USA' order by customerNumber asc;
++----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
+| customerNumber | customerName                 | contactLastName | contactFirstName | phone      | addressLine1              | addressLine2 | city          | state | postalCode | country | salesRepEmployeeNumber | creditLimit |
++----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
+|            112 | Signal Gift Stores           | King            | Jean             | 7025551838 | 8489 Strong St.           | NULL         | Las Vegas     | NV    | 83030      | USA     |                   1166 |    71800.00 |
+|            124 | Mini Gifts Distributors Ltd. | Nelson          | Susan            | 4155551450 | 5677 Strong St.           | NULL         | San Rafael    | CA    | 97562      | USA     |                   1165 |   210500.00 |
+|            129 | Mini Wheels Co.              | Murphy          | Julie            | 6505555787 | 5557 North Pendale Street | NULL         | San Francisco | CA    | 94217      | USA     |                   1165 |    64600.00 |
+|            131 | Land of Toys Inc.            | Lee             | Kwai             | 2125557818 | 897 Long Airport Avenue   | NULL         | NYC           | NY    | 10022      | USA     |                   1323 |   114900.00 |
+|            151 | Muscle Machine Inc           | Young           | Jeff             | 2125557413 | 4092 Furth Circle         | Suite 400    | NYC           | NY    | 10022      | USA     |                   1286 |   138500.00 |
+|            157 | Diecast Classics Inc.        | Leong           | Kelvin           | 2155551555 | 7586 Pompton St.          | NULL         | Allentown     | PA    | 70267      | USA     |                   1216 |   100600.00 |
+|            161 | Technics Stores Inc.         | Hashimoto       | Juri             | 6505556809 | 9408 Furth Circle         | NULL         | Burlingame    | CA    | 94217      | USA     |                   1165 |    84600.00 |
+|            168 | American Souvenirs Inc       | Franco          | Keith            | 2035557845 | 149 Spinnaker Dr.         | Suite 101    | New Haven     | CT    | 97823      | USA     |                   1286 |        0.00 |
++----------------+------------------------------+-----------------+------------------+------------+---------------------------+--------------+---------------+-------+------------+---------+------------------------+-------------+
+8 rows in set (0.00 sec)
