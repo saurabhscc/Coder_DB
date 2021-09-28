@@ -182,3 +182,19 @@ mysql> select * from student;
 |       3 | Shreyas | Sangli  | 3333333333 |
 +---------+---------+---------+------------+
 3 rows in set (0.00 sec)
+
+
+/*Create View from Tables */
+mysql> create view student_1 as
+    -> select address, mob_no from student;
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> select * from student_1;
++---------+------------+
+| address | mob_no     |
++---------+------------+
+| Solapur | 1111111111 |
+| Satara  | 2222222222 |
+| Sangli  | 3333333333 |
++---------+------------+
+3 rows in set (0.01 sec)
