@@ -1,0 +1,37 @@
+*display database */
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| cpulogdata         |
+| demo               |
+| employee           |
+| information_schema |
+| lms                |
+| lmsdb              |
+| mysql              |
+| performance_schema |
+| pets               |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+12 rows in set (0.00 sec)
+
+/*Creating database*/
+mysql>  create database Coders;
+Query OK, 1 row affected (0.03 sec)
+
+/*Using created database*/
+mysql> use coders;
+Database changed
+
+/*Checking which database is in current use*/
+mysql>  select database();
++------------+
+| database() |
++------------+
+| coders     |
++------------+
+1 row in set (0.00 sec)
