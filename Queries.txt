@@ -35,3 +35,73 @@ mysql>  select database();
 | coders     |
 +------------+
 1 row in set (0.00 sec)
+
+
+/*Create table*/
+mysql>  create table student(roll_no int, name varchar(20), address varchar(20));
+Query OK, 0 rows affected (0.07 sec)
+
+/* To check table is created or not*/
+mysql> show tables;
++------------------+
+| Tables_in_coders |
++------------------+
+| student          |
++------------------+
+1 row in set (0.00 sec)
+
+/*Insert values in table*/
+mysql> insert into student values(1, "Sky", "Solapur");
+Query OK, 1 row affected (0.04 sec)
+
+mysql> insert into student values(2, "Sanket", "Satara");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into student values(3, "Shreyas", "Sangli");
+Query OK, 1 row affected (0.02 sec)
+
+mysql>  insert into student values(4, "Shivani", "Kolhapur");
+Query OK, 1 row affected (0.02 sec)
+
+/*retrieve inserted value in table*/
+mysql> select * from student;
++---------+---------+----------+
+| roll_no | name    | address  |
++---------+---------+----------+
+|       1 | Sky     | Solapur  |
+|       2 | Sanket  | Satara   |
+|       3 | Shreyas | Sangli   |
+|       4 | Shivani | Kolhapur |
++---------+---------+----------+
+4 rows in set (0.00 sec)
+
+
+/* retrieve specific column from table (can retrieve one or more columns from table)*/
+mysql>  select roll_no from student;
++---------+
+| roll_no |
++---------+
+|       1 |
+|       2 |
+|       3 |
+|       4 |
++---------+
+4 rows in set (0.00 sec)
+
+/*retrieve specific value from table*/
+mysql> select roll_no, address from student where name = "Shreyas";
++---------+---------+
+| roll_no | address |
++---------+---------+
+|       3 | Sangli  |
++---------+---------+
+1 row in set (0.00 sec)
+
+
+mysql> select name, address from student where roll_no = 2;
++--------+---------+
+| name   | address |
++--------+---------+
+| Sanket | Satara  |
++--------+---------+
+1 row in set (0.00 sec)
